@@ -1,0 +1,12 @@
+spring:
+  datasource:
+      url: jdbc:mysql://localhost:3306/example?useSSL=false&serverTimezone=UTC
+      username: example
+      password: example
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    url: jdbc:mysql://localhost:3306/example?useSSL=false&serverTimezone=UTC
+    user: example
+    password: example
+  application:
+    name: @project.artifactId@
