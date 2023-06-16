@@ -11,7 +11,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -166,6 +165,7 @@ class EmployeeRestController {
 					e.setDepartment(employee.getDepartment());
 					return e;
 				})
+				.map(employeeRepository::save)
 				.map(ResponseEntity::ok)
 				.orElseThrow(() -> new DataNotFoundException("Employee not found"));
 	}
